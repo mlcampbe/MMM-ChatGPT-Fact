@@ -19,7 +19,7 @@ module.exports = NodeHelper.create({
       };
       country = this.get_country();
       topic=result.prompt.replace(/<country>/, country);
-      title=result.prompt.replace(/<country>/, country);
+      title=result.title.replace(/<country>/, country);
 
       const openai = new OpenAI({ apiKey: this.apikey });
 
