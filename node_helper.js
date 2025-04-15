@@ -34,8 +34,8 @@ module.exports = NodeHelper.create({
       } catch (error) {
         console.error("Error fetching from OpenAI API", error);
         this.sendSocketNotification("COMMAND_OUTPUT", {
-          title: "Error",
-          text: "Could not get a response."
+          title: "ChatGPT Error",
+          text: "Could not get a response from ChatGPT."
         });
       };
     };
