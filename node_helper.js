@@ -17,7 +17,9 @@ module.exports = NodeHelper.create({
       if (this.safetyFilter) {
         result.prompt += " that is suitable for children under 12";
       };
-      topic=result.prompt.replace(/<country>/, this.get_country());
+      country = this.get_country();
+      topic=result.prompt.replace(/<country>/, country);
+      title=result.prompt.replace(/<country>/, country);
 
       const openai = new OpenAI({ apiKey: this.apikey });
 
@@ -45,17 +47,17 @@ module.exports = NodeHelper.create({
     topics = [
             {title: "Did You Know?",
              prompt: "Tell me a fun fact in 50 words or less"},
-            {title: "All About Animals",
+            {title: "All About Animals in <country>",
              prompt: "Tell me an interesting fact about an animal in <country> in 50 words or less"},
-            {title: "All About Countries",
+            {title: "All About <country>",
              prompt: "Tell me an interesting fact about the country <country> in 50 words or less"},
-            {title: "Famous People",
+            {title: "Famous People from <country>",
              prompt: "Tell me about a famous historical figure from <country> in 50 words or less"},
-            {title: "Notable Events",
+            {title: "Notable Events from <country>",
              prompt: "Tell me about a notable historical event that happened in <country> in 50 words or less"},
-            {title: "Notable World Records",
+            {title: "Notable World Records from <country>",
              prompt: "Tell me about a notable world record in 50 words or less"},
-            {title: "Sporting Events",
+            {title: "Sporting Events from <country>",
              prompt: "Tell me an interesting sporting event that happened in <country> in 50 words or less"},
             {title: "Odd, But True!",
              prompt: "Tell me a fact that is odd, but true in 50 words or less"}
