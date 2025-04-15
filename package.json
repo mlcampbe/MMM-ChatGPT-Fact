@@ -1,0 +1,9 @@
+{
+  "name": "MMM-ChatGPT-Fact",
+  "version": "1.0.0",
+  "description": "A MagicMirror module that queries OpenAI's GPT API.",
+  "main": "MMM-ChatGPT-Fact.js",
+  "dependencies": {
+    "openai": "^4.0.0"
+  }
+}
